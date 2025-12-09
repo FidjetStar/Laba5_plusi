@@ -16,17 +16,17 @@ int main() {
     string myString;
     int choice, taskChoice;
     do {
-        cout << "\n=== ÃËÀÂÍÎÅ ÌÅÍÞ ===" << endl;
-        cout << "1. Âûáðàòü çàäàíèå (1-7)" << endl;
-        cout << "2. Âûáðàòü ñïîñîá çàïîëíåíèÿ ñòðîêè" << endl;
-        cout << "3. Âûâåñòè ñòðîêó" << endl;
-        cout << "4. Î÷èñòèòü ñòðîêó" << endl;
-        cout << "0. Âûõîä" << endl;
-        cout << "Âûáîð: ";
+        cout << "\n=== Ð“Ð›ÐÐ’ÐÐžÐ• ÐœÐ•ÐÐ® ===" << endl;
+        cout << "1. Ð’Ñ‹Ð±Ñ€Ð°Ñ‚ÑŒ Ð·Ð°Ð´Ð°Ð½Ð¸Ðµ (1-7)" << endl;
+        cout << "2. Ð’Ñ‹Ð±Ñ€Ð°Ñ‚ÑŒ ÑÐ¿Ð¾ÑÐ¾Ð± Ð·Ð°Ð¿Ð¾Ð»Ð½ÐµÐ½Ð¸Ñ ÑÑ‚Ñ€Ð¾ÐºÐ¸" << endl;
+        cout << "3. Ð’Ñ‹Ð²ÐµÑÑ‚Ð¸ ÑÑ‚Ñ€Ð¾ÐºÑƒ" << endl;
+        cout << "4. ÐžÑ‡Ð¸ÑÑ‚Ð¸Ñ‚ÑŒ ÑÑ‚Ñ€Ð¾ÐºÑƒ" << endl;
+        cout << "0. Ð’Ñ‹Ñ…Ð¾Ð´" << endl;
+        cout << "Ð’Ñ‹Ð±Ð¾Ñ€: ";
         cin >> choice;
         switch (choice) {
             case 1: {
-                cout << "\nÂûáåðèòå çàäàíèå (1-7): ";
+                cout << "\nÐ’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð·Ð°Ð´Ð°Ð½Ð¸Ðµ (1-7): ";
                 cin >> taskChoice;
                 switch (taskChoice) {
                     case 1: task53(myString); break;
@@ -39,19 +39,19 @@ int main() {
                         break;
                     }
                     case 7: task3(); break;
-                    default: cout << "Íåâåðíûé íîìåð çàäàíèÿ!" << endl;
+                    default: cout << "ÐÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ð½Ð¾Ð¼ÐµÑ€ Ð·Ð°Ð´Ð°Ð½Ð¸Ñ!" << endl;
                 }
                 break;
             }
             case 2: {
-                cout << "\n=== ÑÏÎÑÎÁÛ ÇÀÏÎËÍÅÍÈß ===" << endl;
-                cout << "1. Ñ êëàâèàòóðû" << endl;
-                cout << "2. Èç ôàéëà" << endl;
-                cout << "3. Ðàíäîì: äëÿ çàäàíèÿ 53" << endl;
-                cout << "4. Ðàíäîì: äëÿ çàäàíèÿ 16" << endl;
-                cout << "5. Ðàíäîì: äëÿ çàäàíèÿ 28" << endl;
-                cout << "6. Ðàíäîì: âñå ñèìâîëû" << endl;
-                cout << "Âûáîð: ";
+                cout << "\n=== Ð¡ÐŸÐžÐ¡ÐžÐ‘Ð« Ð—ÐÐŸÐžÐ›ÐÐ•ÐÐ˜Ð¯ ===" << endl;
+                cout << "1. Ð¡ ÐºÐ»Ð°Ð²Ð¸Ð°Ñ‚ÑƒÑ€Ñ‹" << endl;
+                cout << "2. Ð˜Ð· Ñ„Ð°Ð¹Ð»Ð°" << endl;
+                cout << "3. Ð Ð°Ð½Ð´Ð¾Ð¼: Ð´Ð»Ñ Ð·Ð°Ð´Ð°Ð½Ð¸Ñ 53" << endl;
+                cout << "4. Ð Ð°Ð½Ð´Ð¾Ð¼: Ð´Ð»Ñ Ð·Ð°Ð´Ð°Ð½Ð¸Ñ 16" << endl;
+                cout << "5. Ð Ð°Ð½Ð´Ð¾Ð¼: Ð´Ð»Ñ Ð·Ð°Ð´Ð°Ð½Ð¸Ñ 28" << endl;
+                cout << "6. Ð Ð°Ð½Ð´Ð¾Ð¼: Ð²ÑÐµ ÑÐ¸Ð¼Ð²Ð¾Ð»Ñ‹" << endl;
+                cout << "Ð’Ñ‹Ð±Ð¾Ñ€: ";
                 cin >> taskChoice;
                 int length;
                 string filename;
@@ -61,37 +61,37 @@ int main() {
                         break;
 
                     case 2:
-                        cout << "Ââåäèòå èìÿ ôàéëà: ";
+                        cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ Ñ„Ð°Ð¹Ð»Ð°: ";
                         cin >> filename;
                         fillFromFile(myString, filename);
                         break;
 
                     case 3:
-                        cout << "Ââåäèòå äëèíó ñòðîêè: ";
+                        cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð»Ð¸Ð½Ñƒ ÑÑ‚Ñ€Ð¾ÐºÐ¸: ";
                         cin >> length;
                         fillRandom53(myString, length);
                         break;
 
                     case 4:
-                        cout << "Ââåäèòå äëèíó ñòðîêè: ";
+                        cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð»Ð¸Ð½Ñƒ ÑÑ‚Ñ€Ð¾ÐºÐ¸: ";
                         cin >> length;
                         fillRandom16(myString, length);
                         break;
 
                     case 5:
-                        cout << "Ââåäèòå äëèíó ñòðîêè: ";
+                        cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð»Ð¸Ð½Ñƒ ÑÑ‚Ñ€Ð¾ÐºÐ¸: ";
                         cin >> length;
                         fillRandom28(myString, length);
                         break;
 
                     case 6:
-                        cout << "Ââåäèòå äëèíó ñòðîêè: ";
+                        cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð»Ð¸Ð½Ñƒ ÑÑ‚Ñ€Ð¾ÐºÐ¸: ";
                         cin >> length;
                         fillRandomAll(myString, length);
                         break;
 
                     default:
-                        cout << "Íåâåðíûé âûáîð!" << endl;
+                        cout << "ÐÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ð²Ñ‹Ð±Ð¾Ñ€!" << endl;
                 }
                 break;
             }
@@ -102,13 +102,12 @@ int main() {
             case 4:
                 clearString(myString);
                 break;
-
             case 0:
-                cout << "Âûõîä èç ïðîãðàììû" << endl;
+                cout << "Ð’Ñ‹Ñ…Ð¾Ð´ Ð¸Ð· Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ñ‹" << endl;
                 break;
 
             default:
-                cout << "Íåâåðíûé âûáîð!" << endl;
+                cout << "ÐÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ð²Ñ‹Ð±Ð¾Ñ€!" << endl;
         }
 
     } while (choice != 0);
