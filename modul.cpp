@@ -7,20 +7,22 @@
 
 using namespace std;
 
-// ====================== ЗАДАНИЯ =======================
-// unsigned char гарантирует диапазон 0–255
+// ====================== Р—Р°РґР°РЅРёСЏ =======================
+// unsigned char РіР°СЂР°РЅС‚РёСЂСѓРµС‚ С‡С‚Рѕ Р»РµР¶РёС‚ РІ РґРёР°РїР°Р·РѕРЅРµ РѕС‚ 0 РґРѕ 255
+
 void task53(string& str) {
     for (unsigned char c : str) { // char c = str[i]
         if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')) {
-            cout << "Строка содержит английские буквы!" << endl;
-            return;
+            cout << "РЎС‚СЂРѕРєР° СЃРѕРґРµСЂР¶РёС‚ Р°РЅРіР»РёР№СЃРєРёРµ Р±СѓРєРІС‹ ";
         }
     }
     int count = 0;
     for (unsigned char c : str) {
-        if (ispunct(c)) count++;
+        if (c == '.' || c == ',' || c == ';' || c == ':' || 
+            c == '?' || c == '!') { count++;
+        }
     }
-    cout << "Количество знаков препинания: " << count << endl;
+    cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ Р·РЅР°РєРѕРІ РїСЂРµРїРёРЅР°РЅРёСЏ " << count << endl;
 }
 
 void task16(string& str) {
@@ -28,49 +30,49 @@ void task16(string& str) {
     for (int i = 0; i < str.length(); i++) {
         char c = str[i];
         if (c == ' ') {
-            str.replace(i, 1, "№");
+            str[i] = char(35);
             p = p + 1;
         }
     }
-    str = str + "!";
-    cout << "В конец добавился !" << endl;
+    str += char(33);
+    cout << "Р’ РєРѕРЅРµС† РґРѕР±Р°РІР»РµРЅ !" << endl;
     if (p > 0) {
-        cout << "В строке заменились пробелы на № " << endl;
+        cout << "РџСЂРѕР±РµР»С‹ Р·Р°РјРµРЅРµРЅС‹ РЅР° # " << endl;
     } else {
-        cout << "В строке не было знаков пробелов" << endl;
+        cout << "РџСЂРѕР±РµР»РѕРІ РЅРµ Р±С‹Р»Рѕ" << endl;
     }
 }
 
 void task23(string& str) {
     int gamma;
-    cout << "Введите значение гаммы (от 127 до 255 включительно)" << endl;
+    cout << "Р’РІРµРґРёС‚Рµ Р·РЅР°С‡РµРЅРёРµ РіР°РјРјС‹ РѕС‚ 127 РґРѕ 255" << endl;
     cin >> gamma;
     if (!(127 <= gamma && gamma <= 255)) {
-        cout << "Введено неправильное значение " << endl;
+        cout << "РќРµРїСЂР°РІРёР»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РіР°РјРјС‹ " << endl;
         return;
     }
-    cout << "Исходно: \"" << str << "\"" << endl;
+    cout << "РР·РЅР°С‡Р°Р»СЊРЅР°СЏ СЃС‚СЂРѕРєР°: \"" << str << "\"" << endl;
     string str1 = str;
     for (int i = 0; i < str.length(); i++) {
         str1[i] = str[i] ^ gamma;
     }
-    cout << "Шифр: \"" << str1 << "\"" << endl;
+    cout << "РЁРёС„СЂ: \"" << str1 << "\"" << endl;
     string check = str1;
     for (int i = 0; i < str1.length(); i++) {
         check[i] = str1[i] ^ gamma;
     }
-    cout << "Проверка: \"" << check << "\"" << endl;
+    cout << "РџСЂРѕРІРµСЂРєР°: \"" << check << "\"" << endl;
 }
 
 void task36(string& str) {
-    set<unsigned char> chars; //контейнер сет типа чар будет хранить уникальные символы
+    set<unsigned char> chars; //РљРѕРЅС‚РµР№РЅРµСЂ set С‚РёРїР° char
     for (unsigned char c : str) {
         if (!ispunct(c) && c != ' ') {
             chars.insert(c);
         }
     }
-    cout << "Количество различных символов: " << chars.size() << endl;
-    cout << "Уникальные символы: ";
+    cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ СѓРЅРёРєР°Р»СЊРЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ: " << chars.size() << endl;
+    cout << "РЈРЅРёРєР°Р»СЊРЅС‹Рµ СЌР»РµРјРµРЅС‚С‹: ";
     for (unsigned char c : chars) {
         cout << "'" << c << "' ";
     }
@@ -84,11 +86,11 @@ void task28(string& str) {
     }
     for (char c : up) {
         if (!((c >= '0' && c <= '9') || (c >= 'A' && c <= 'F'))) {
-            cout << "НЕ шестнадцатеричное число" << endl;
+            cout << "РќРµ 16СЂРёС‡РЅР°СЏ СЃСЃ" << endl;
             return;
         }
     }
-    cout << "Является шестнадцатеричным" << endl;
+    cout << "16СЂРёС‡РЅР°СЏ СЃСЃ" << endl;
     int decimal = 0;
     for (char c : up) {
         int digit;
@@ -100,31 +102,31 @@ void task28(string& str) {
         }
         decimal = decimal * 16 + digit;
     }
-    cout << "В десятичной: " << decimal << endl;
+    cout << "РІ РґРµСЃСЏС‚РёС‡РЅРѕР№: " << decimal << endl;
     string oct;
     int t = decimal;
     while (t > 0) {
-        oct = char('0' + t % 8) + oct; //сдвигаемся от символа '0' в ASCII-таблице
+        oct = char('0' + t % 8) + oct; //СЃРґРІРёРіР°РµРјСЃСЏ РѕС‚ '0' РІ ASCII-С‚Р°Р±Р»РёС†Рµ
         t /= 8;
     }
     if (oct.empty()) {
-        cout << "В восьмеричной: 0" << endl;
+        cout << "Р’ 8СЂРёС‡РЅРѕР№ СЃСЃ СЃС‚СЂРѕРєР° СЂР°РІРЅР°: 0" << endl;
     } else {
-        cout << "В восьмеричной: " << oct << endl;
+        cout << "Р’ 8СЂРёС‡РЅРѕР№ СЃСЃ : " << oct << endl;
     }
 }
 
 void task6() {
-    cout << "\n=== ГЕНЕРАТОР ПАРОЛЕЙ ===" << endl;
+    cout << "\n=== Р“Р•РќР•Р РђРўРћР  РџРђР РћР›Р•Р™ ===" << endl;
     const string lowercase = "abcdefghijklmnopqrstuvwxyz";
     const string uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const string digits = "0123456789";
     const string symbols = "!@#$%^&*()_+-=[]{}|;:,.<>?";
     int level;
-    cout << "Выберите уровень сложности пароля:" << endl;
-    cout << "1 - Простой (5 символов, только буквы)" << endl;
-    cout << "2 - Средний (10 символов, буквы + цифры)" << endl;
-    cout << "3 - Сложный (25 символов, буквы + цифры + символы)" << endl;
+    cout << "Р’С‹Р±РµСЂРёС‚Рµ СѓСЂРѕРІРµРЅСЊ СЃР»РѕР¶РЅРѕСЃС‚Рё:" << endl;
+    cout << "1 - РџСЂРѕСЃС‚РѕР№ (5 СЃРёРјРІРѕР»РѕРІ, С‚РѕР»СЊРєРѕ Р±СѓРєРІС‹)" << endl;
+    cout << "2 - РЎСЂРµРґРЅРёР№ (10 СЃРёРјРІРѕР»РѕРІ, Р±СѓРєРІС‹ + С†РёС„СЂС‹)" << endl;
+    cout << "3 - РЎР»РѕР¶РЅС‹Р№ (25 СЃРёРјРІРѕР»РѕРІ, Р±СѓРєРІС‹ + С†РёС„СЂС‹ + СЃРёРјРІРѕР»С‹)" << endl;
     cin >> level;
     int length;
     string charPool;
@@ -133,59 +135,84 @@ void task6() {
         case 1:
             length = 5;
             charPool = lowercase + uppercase;
-            description = "Простой (только буквы)";
+            description = "РџСЂРѕСЃС‚РѕР№ (5 СЃРёРјРІРѕР»РѕРІ, С‚РѕР»СЊРєРѕ Р±СѓРєРІС‹)";
             break;
         case 2:
             length = 10;
             charPool = lowercase + uppercase + digits;
-            description = "Средний (буквы + цифры)";
+            description = "РЎСЂРµРґРЅРёР№ (10 СЃРёРјРІРѕР»РѕРІ, Р±СѓРєРІС‹ + С†РёС„СЂС‹)";
             break;
         case 3:
             length = 25;
             charPool = lowercase + uppercase + digits + symbols;
-            description = "Сложный (буквы + цифры + символы)";
+            description = "РЎР»РѕР¶РЅС‹Р№ (25 СЃРёРјРІРѕР»РѕРІ, Р±СѓРєРІС‹ + С†РёС„СЂС‹ + СЃРёРјРІРѕР»С‹)";
             break;
         default:
-            cout << " Выберите уровень сложности 1-3" << endl;
+            cout << " Р’С‹Р±РµСЂРёС‚Рµ СѓСЂРѕРІРµРЅСЊ 1-3" << endl;
             break;
     }
     string password;
     for (int i = 0; i < length; i++) {
         password += charPool[rand() % charPool.length()];
     }
-    cout << "\n--- РЕЗУЛЬТАТ ГЕНЕРАЦИИ ---" << endl;
-    cout << "Уровень: " << level << endl;
-    cout << "Пароль: " << password << endl;
+    cout << "\n--- РџРђР РћР›Р¬ РЎР“Р•РќР•Р РР РћР’РђРќ ---" << endl;
+    cout << "РЈСЂРѕРІРµРЅСЊ: " << level << endl;
+    cout << "РџР°СЂРѕР»СЊ: " << password << endl;
 }
 
 void task3() {
     ifstream in("FN1.txt");
     ofstream out("FN2.txt");
-    string line;
-    while (getline(in, line)) {
-        int sum = 0, num = 0;
-        char sign = '+';
-        for (char c : line) {
+    string s; 
+    while (getline(in, s)) {
+        if (s.empty()) {
+            out << s << " // РѕС€РёР±РєР°" << endl;
+            continue;
+        }
+        bool ok = true;
+        int p = 0, e = 0; // Рµ РґР»СЏ РїРѕРґСЃС‡РµС‚Р° =
+        for (char c : s) {
+            if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || 
+                (c >= '?' && c <= '?') || (c >= '?' && c <= '?')) {
+                ok = false;
+                break;
+            }
+            if (c == '+' || c == '-') p++;
+            if (c == '=') e++;
+        }
+        if (!ok || p != 1 || e != 1 || s.back() != '=') {
+            out << s << " // РѕС€РёР±РєР°" << endl;
+            continue;
+        }
+        int sum = 0, n = 0;
+        char z = '+';
+        bool f = true; 
+        for (char c : s) {
             if (c >= '0' && c <= '9') {
-                num = num * 10 + (c - '0');
+                n = n * 10 + (c - '0'); 
             }
             else if (c == '+' || c == '-' || c == '=') {
-                if (sign == '+') sum += num;
-                else sum -= num;
-                num = 0;
-                if (c != '=') sign = c;
+                if (f) {
+                    sum = n;
+                    f = false;
+                } 
+                else {
+                    if (z == '+') sum += n;
+                    else sum -= n;
+                }
+                n = 0;
+                if (c != '=') z = c;
             }
         }
-        out << line << sum << endl;
+        out << s << sum << endl;
     }
-    cout << "Готово! Ответы записаны в файл FN2.txt" << endl;
+    cout << "РћС‚РІРµС‚С‹ Р·Р°РїРёСЃР°РЅС‹ РІ FN2.txt!" << endl;
 }
-
-// ====================== ЗАПОЛНЕНИЕ СТРОК =======================
+// ====================== Р’РІРѕРґС‹ СЃС‚СЂРѕРєРё =======================
 
 void fillFromKeyboard(string& str) {
     clearString(str);
-    cout << "Введите строку: ";
+    cout << "Р’РІРµРґРёС‚Рµ СЃ РєР»Р°РІРёР°С‚СѓСЂС‹: ";
     cin.ignore();
     getline(cin, str);
 }
@@ -194,7 +221,7 @@ bool fillFromFile(string& str, const string& filename) {
     clearString(str);
     ifstream file(filename);
     if (!file.is_open()) {
-        cout << "Ошибка открытия файла!" << endl;
+        cout << "Р¤Р°Р№Р» РЅРµ РѕС‚РєСЂС‹Р»СЃСЏ!" << endl;
         return false;
     }
     string line;
@@ -202,7 +229,7 @@ bool fillFromFile(string& str, const string& filename) {
         str += line;
     }
 
-    cout << "Строка загружена из файла!" << endl;
+    cout << "РЎС‚СЂРѕРєР° Р·Р°РіСЂСѓР¶РµРЅР° РёР· С„Р°Р№Р»Р°!" << endl;
     return true;
 }
 
@@ -214,7 +241,7 @@ void fillRandom53(string& str, int length) {
         symbols += char(i);
     }
     for (int i = 192; i <= 223; i++) {
-        symbols += char(i);
+        symbols += char(i); 
     }
     symbols += "!@#$%^&*()_+-=[]{}|;:,.<>?~` ";
     for (int i = 0; i < length; i++) {
@@ -226,7 +253,7 @@ void fillRandom16(string& str, int length) {
     clearString(str);
     srand(time(0));
     string symbols;
-    for (int i = 250; i <= 255; i++) {
+    for (int i = 250; i <= 255; i++) { 
         symbols += char(i);
     }
     symbols += " ";
@@ -271,16 +298,16 @@ void fillRandomAll(string& str, int length) {
 
 void printString(const string& str) {
     if (str.empty()) {
-        cout << "Строка пуста!" << endl;
+        cout << "РЎС‚СЂРѕРєР° РїСѓСЃС‚Р°СЏ!" << endl;
     } 
     else {
-        cout << "Строка: " << str << endl;
+        cout << "РЎС‚СЂРѕРєР°: " << str << endl;
     }
 }
 
 void clearString(string& str) {
     str.clear();
-    cout << "Строка очищена!" << endl;
+    cout << "РЎС‚СЂРѕРєР° РѕС‡РёС‰РµРЅР°!" << endl;
 }
 
 
